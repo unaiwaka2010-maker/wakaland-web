@@ -1,14 +1,10 @@
-﻿blinker==1.9.0
-click==8.3.0
-Flask==3.1.2
-itsdangerous==2.2.0
-Jinja2==3.1.6
-MarkupSafe==3.0.3
-Werkzeug==3.1.3
- 
-gunicorn
- 
- 
+from flask import Flask, render_template
 
+app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
 
+if __name__ == '__main__':
+    app.run(debug=True)
